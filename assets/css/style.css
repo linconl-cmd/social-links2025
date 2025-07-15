@@ -81,6 +81,7 @@ footer {
     padding: 20px 0;
     font-size: 0.9rem;
     color: var(--gray);
+     position: relative; 
 }
 
 /* Botão flutuante do WhatsApp */
@@ -156,10 +157,23 @@ footer {
     }
 }
 
+/* Quebra a linha apenas em telas pequenas */
 @media (max-width: 768px) {
+    footer::after {
+        content: "Digital Solutions 2025";
+        display: block;
+        margin-top: 8px;
+        font-size: 0.75rem;
+    }
+
+    footer::before {
+        content: "Copyright ©";
+        display: block;
+        font-size: 0.75rem;
+    }
+
+    /* Esconde o conteúdo original para não repetir */
     footer {
-        font-size: 0.75rem; /* Ajuste conforme necessário */
-        margin-top: 30px;
-        padding: 15px 0;
+        font-size: 0;
     }
 }
