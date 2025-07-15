@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
+	<title>Digital Solutions</title>
+	<!-- Google tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-203241770-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-203241770-1');
+	</script>
+</head>
+<body>
+	<main>
+		<section class="container">
+			<img class="logo-img" src="assets/img/digitalslti.png" alt="Logo">
+			<h1 class="titulo-link">Digital Solutions</h1>
+			<!-- Links do WhatsApp -->
+			<a href="#" id="whatsapp-compra" class="link" target="_blank">Realizar Compra direta</a>
+			<a href="#" id="#" class="link" target="_blank">site</a>
+			<a href="#" id="whatsapp-duvidas" class="link" target="_blank">Dúvidas</a>
+			<a href="#" class="link">Formulário de contato</a>
+		</section>
+	</main>
+
+	 <!-- Botão fixo do WhatsApp -->
+	 <a href="#" id="whatsapp-btni" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Fale conosco pelo WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+     </a>
+	 
+     <!-- Botão fixo à esquerda com Font Awesome -->
+     <a href="https://www.instagram.com/digitalslti" target="_blank" rel="noopener noreferrer" class="side-btn instagram-btn" aria-label="Nos siga no Instagram">
+     <i class="fab fa-instagram" style="color: #fff; font-size: 28px;"></i>
+     </a>
+	
+	<footer>
+		Copyright © Azevedo Digital Solutions 2025
+	</footer>
+	
+	<script>
+		// Configurações básicas
+		const phoneNumber = "5573991430073";
+		const messages = {
+			compra: "Olá, vim pela página de social-links, quero comprar um certificado digital.",
+			duvidas: "Olá, vim pela página de social-links estou com Dúvidas sobre Certificação Digital"
+		};
+	
+		// Verifica dispositivo e gera os links
+		const isMobile = /iphone|ipad|android/.test(navigator.userAgent.toLowerCase());
+		const baseUrl = isMobile ? "https://wa.me" : "https://web.whatsapp.com/send";
+		const getWhatsAppLink = (message) =>
+			`${baseUrl}/${isMobile ? phoneNumber : `?phone=${phoneNumber}&text=${encodeURIComponent(message)}`}`;
+	
+		// Atualiza os links
+		document.getElementById("whatsapp-compra").href = getWhatsAppLink(messages.compra);
+		document.getElementById("whatsapp-duvidas").href = getWhatsAppLink(messages.duvidas);
+		document.getElementById("whatsapp-btni").href = getWhatsAppLink(messages.duvidas);
+	</script>
+</body>
+</html>
